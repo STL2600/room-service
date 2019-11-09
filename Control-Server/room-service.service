@@ -1,0 +1,15 @@
+[Unit]
+Description=Room Service Server
+After=local-fs.target network.target
+
+[Service]
+User=root
+ExecStartPre=/bin/bash /usr/share/room-service/Control-Server/server/build.sh
+ExecStart=/bin/bash /usr/share/room-service/Control-Server/server/start.sh
+ExecPost=/bin/bash /usr/share/room-service/Control-Server/server/launch-browser.sh
+Type=simple
+StandardError=null
+TimeoutStartSec=5min
+
+[Install]
+WantedBy=multi-user.target

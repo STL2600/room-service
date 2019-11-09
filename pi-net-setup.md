@@ -1,0 +1,19 @@
+ - Go into the router admin page, click on "More Settings" > "Advanced".
+   - Click on "Network" > "DHCP and DNS"
+   - Add static leases for the Raspberry Pis
+
+ - Control Pi
+   - Clone repo into /usr/share/room-service
+   - Copy Control-Server/server/settings.example.json to Control-Server/server/settings.json and edit as nescessary
+   - Open the server config and add the other Pis to the systems section
+   - Copy Motion-Config/motion.conf to /etc/motion/motion.conf
+   - Create /var/motion directory and chown to motion:motion
+   - Run `systemctl enable motion` to start motion at startup
+   - Copy Control-Server/room-service.service to /etc/systemd/system/room-service.service
+   - Run `systemctl enable room-service` to start room service at startup
+   - COpy Motion-Config/clear-motion-videos.service to /etc/systemd/system/clear-motion-videos.service
+   - COpy Motion-Config/clear-motion-videos.timer to /etc/systemd/system/clear-motion-videos.timer
+   - Run `systemctl enable clear-motion-videos.timer` to start the scheduled task at startup
+   - Copy Control-Server/server/nginx.conf to /etc/nginx/nginx.conf
+   - Run `systemctl enable nginx`
+   - Restart the pi

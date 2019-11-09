@@ -1,0 +1,9 @@
+[Unit]
+Description=Clear Motion Videos Older than One Day Hourly
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,30 @@
+{
+  "log": {
+    "level": "debug",
+    "file": "/var/log/room-service.log"
+  },
+  "router": {
+    "host": "192.168.8.1",
+    "password": "this is where your router password goes"
+  },
+  "alerts": {
+    "enabled": false
+  },
+  "systems": {
+    "media": {
+      "host": "192.168.8.151",
+      "user": "root",
+      "key": "~/.ssh/id_rsa"
+    }
+  },
+  "mailer": {
+    "host": "smtp.mymailserver.com",
+    "port": "465",
+    "auth": {
+      "user": "user@mymyailserver.com",
+      "pass": "my email password"
+    },
+    "from": "user@mymyailserver.com",
+    "to": "user@mymyailserver.com"
+  }
+}
